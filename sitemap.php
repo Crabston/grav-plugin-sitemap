@@ -318,7 +318,7 @@ class SitemapPlugin extends Plugin
                     'lang' => $lang,
                     'translated' => in_array($lang, $page_languages),
                     'location' => $location,
-                    'lastmod' => date($this->datetime_format, $page->modified()),
+                    'lastmod' => date($this->datetime_format, $page->date() ?: $page->modified()),
                     'longdate' => date('Y-m-d\TH:i:sP', $page->date()),
                     'shortdate' => date('Y-m-d', $page->date()),
                     'timestamp' => $page->date(),
